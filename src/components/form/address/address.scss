@@ -1,0 +1,28 @@
+.address {
+  
+  button {
+    background: #ff8e8e;
+    border: none;
+    color: white;
+    padding: 1%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  button:hover {
+    background: black;
+    color: white;
+  }
+  .col {
+    padding:5px;
+  }
+}
+@media screen and (max-width: 676px) {
+  .address{button {
+    min-width: 80%;
+  }
+  .col{
+    padding-left:25px;
+  }
+}
+}

@@ -1,0 +1,117 @@
+import React, { useState, useContext } from "react";
+import "./product.scss";
+import Quantity from "../../components/quantity/quantity";
+import Data from "../../assets/config/setting_data.json";
+import { CartContextConsumer } from "../../context/cart.context";
+import Products from '../../assets/config/products.json';
+
+const Product = props => {
+	const [addedToCart, setAddedToCart] = useState(false);
+		const { addProductToCart } = useContext(CartContextConsumer);
+		let productHandle=props.match.params.handle;
+		let productData=null;
+		for (let index = 0; index < Products.length; index++) {
+			console.log(productHandle)
+			if(Products[index].handle==productHandle){
+				productData=Products[index].src;
+			}
+		}
+	let addToCartText = Data.cart.addToCart;
+	var showAlert = null;
+  
+	const urlB = props.match.url.split("/");
+   
+	var urlL = [];
+  for (let i = 1; i < urlB.length - 1; i++) {
+    const hreff = "/" + urlB[i];
+    urlL = (
+      <li class="breadcrumb-item">
+        <a href={hreff}>{urlB[i]}</a>
+      </li>
+    );
+  }
+	let addToCartOnClick = () => {
+		setAddedToCart(true);
+		const p = { title: props.match.params.handle,src: props.match.params.src,price: props.match.params.price, };
+		addProductToCart(p);
+	};
+
+	if (addedToCart) {
+		addToCartText = Data.cart.viewCart;
+		addToCartOnClick = () => {
+			props.history.push("/cart");
+		};
+		var viewCartStyle = {
+			backgroundColor: "rgb(247, 183, 183)",
+			color: "white"
+		};
+		showAlert = (
+			<div class="alert alert-dark" role="alert">
+				Product added to cart.
+			</div>
+		);
+	}
+	return (
+		<div>
+			<div class="breadcrumb-box">
+				<ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            {urlL}
+            <li class="breadcrumb-item active" aria-current="page">
+              {props.match.params.handle}
+            </li>
+				</ol>
+			</div>
+
+			<div class="container temp ">
+				<div class="row">
+					<div class="col-lg-7">
+						<img
+							id="productImg"
+							src={productData}
+							alt=""
+							style={{ width: "100%", padding: "0px" }}
+						/>
+					</div>
+					<div class="col-lg-5">
+						<div class="productTitle">
+							<p> Pen </p>
+						</div>
+						<div class="productDesc">
+							<p>
+								Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsuma
+								Lorem IpsumLorem Ipsuma Lorem IpsumLorem Ipsuma Lorem IpsumLorem
+								Ipsuma IpsumLorem IpsumLore
+							
+							</p>
+						</div>
+						<div id="discPrice">
+							<strike>Rs 1000</strike>
+						</div>
+						<div id="origPrice">
+							<p>Rs 500</p>
+						</div>
+						<Quantity />
+						
+								
+							<div class="col-lg-6">
+								<button
+									type="button"
+									id="cartAdd"
+									onClick={addToCartOnClick}
+									style={viewCartStyle}>
+									{addToCartText}
+								</button>
+								{showAlert}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	);
+};
+
+export default Product;

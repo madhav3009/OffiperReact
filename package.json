@@ -1,0 +1,51 @@
+{
+  "name": "offipers_front",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "algoliasearch": "^3.33.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-animated-css": "^1.2.1",
+    "react-countdown-now": "^2.1.1",
+    "react-dom": "^16.8.6",
+    "react-google-login": "^5.0.4",
+    "react-instantsearch-dom": "^5.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-router-scroll-top": "^0.2.1",
+    "react-scripts": "3.0.1",
+    "react-typist": "^2.0.5"
+  },
+  "scripts": {
+    "start": "SET PORT=5000 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9"
+  }
+}

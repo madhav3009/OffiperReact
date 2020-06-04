@@ -1,0 +1,92 @@
+.navbar-toggler-icon{color:red !important ;background-color:black; }
+.col-xl{button{
+background-color: transparent;border:0px;color:white;cursor:pointer;outline:0px;
+}}
+
+.navbar {
+  border-radius: 0px !important;
+  #per{color:#ff8888;
+  }
+  .fa-shopping-cart,.fa-search:before{
+    
+    color:white;
+    font-size:1.3em;
+}
+
+
+  #cartCollapse{right:12vh;top:3%;position:absolute; position:fixed;z-index:-1;}
+  #searchCollapse{right:18vh;top:3%;position:absolute; position:fixed;z-index:-1}
+
+.nav-link:hover{
+  transform: scale(1.2);transition:transform 0.1s ;
+  }
+  .nav-link{
+    transform:scale(1);
+    transition:transform 1s;
+  }
+  .activeNavColor{color:rgb(255, 130, 130) !important;}
+  
+}
+.navbar-brand {
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;;
+ 
+}
+
+
+.navbar,
+.bg-dark {
+  background-color: black !important;
+}
+
+#navbar-icon {
+  text-align: center;
+  margin-right: 40px;
+  .fa {
+    color: white;
+    font-size: 1.2em;
+    }
+}
+
+#navbar-sign-button {
+  text-align: center;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .col-xl {
+    padding-left: 0px !important;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    text-align: center;
+  }
+  li:first-child {
+    padding-left: 200px;
+  }
+  li {
+    padding-right: 40px !important;
+  }
+}
+
+// media queries
+
+@media only screen and (max-width: 1200px) {
+
+  #cartCollapse,#searchCollapse{opacity:1;}
+    
+  .navbar-nav {
+    li:first-child {
+      padding-left: 0px;
+    }
+    li {
+      padding-right: 8px !important;
+    }
+  }
+  #navbar-icon {
+    margin-right: 0px;
+  }
+  
+}
