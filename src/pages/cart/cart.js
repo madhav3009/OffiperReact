@@ -25,9 +25,8 @@ const Cart = props => {
 			 
 			<div class="cartHead">
             <h3>Shopping Cart </h3>
-			 <button style={{cursor:"default"}}>SUBTOTAL RS 2000</button>
 			 <NavLink to="/checkout" exact>
-			 <button >PROCEED TO PAY</button>
+			 <button id="Pay" >PROCEED TO PAY</button>
 			 </NavLink>
 		</div>
 {pro}
